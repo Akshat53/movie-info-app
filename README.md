@@ -1,3 +1,4 @@
+
 # Movie List App
 
 ## Overview
@@ -20,11 +21,14 @@ The Movie List App is a dynamic web application built with React and TypeScript,
 - Node.js (v14.0.0 or later)
 - npm (v6.0.0 or later)
 
+
+## Deployed Link
+Check out the live app here: [Movie List App](https://movie-info-app-mu.vercel.app/)
+
 ## Installation
 1. Clone the repository: https://github.com/Akshat53/movie-info-app.git
 2. Navigate to the project directory: cd movie-list-app
 3. Install dependencies: npm install or npm i
-
 
 ## Usage
 To start the development server: npm start 
@@ -87,4 +91,6 @@ This project is licensed under the MIT License.
 - React community for excellent documentation and support
 
 ## Contact
-For questions or feedback, please contact Akshat Kumar Singh at singh.akshat.akshat26@gmail.com 
+For questions or feedback, please contact Akshat Kumar Singh at singh.akshat.akshat26@gmail.com
+
+
