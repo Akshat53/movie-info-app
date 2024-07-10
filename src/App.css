@@ -4,15 +4,17 @@ body {
   color: #ffffff;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .app {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  overflow-y: visible;
 }
 
 .header h1 {
@@ -72,11 +74,24 @@ body {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   gap: 20px;
 }
 
+@media (max-width: 459px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
 .movie-card {
+  position: relative;
   background-color: #333;
   border-radius: 10px;
   overflow: hidden;
@@ -92,17 +107,91 @@ body {
   height: auto;
 }
 
-.movie-card h3, .movie-card p {
+.movie-card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 10px;
+  background: rgba(0, 0, 0, 0.7); 
+  color: #ffffff;
+}
+
+.movie-card h3 {
   margin: 0;
+  font-size: 1.2em;
 }
 
 .movie-card .rating {
   font-weight: bold;
   color: #ff4141;
+  margin-top: 5px;
 }
 
 .movie-card .overview {
-  font-size: 0.9em;
-  color: #ccc;
+  display: none; 
+}
+
+.spinner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner-inner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff4141;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.shimmer-card {
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.shimmer-image,
+.shimmer-title,
+.shimmer-rating {
+  background: linear-gradient(90deg, #333 0%, #444 50%, #333 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-image {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.shimmer-title {
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.shimmer-rating {
+  height: 15px;
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.content-wrapper {
+  padding-bottom: 100px;
 }

@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# Movie List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+The Movie List App is a dynamic web application built with React and TypeScript, showcasing top movies from The Movie Database (TMDb) API. It features infinite scrolling, genre filtering, and a responsive design, offering users an engaging way to explore popular films across different years.
 
-## Available Scripts
+## Features
+- Display top 20 movies for each year, starting from 2012
+- Infinite scroll to load previous and next years' movies
+- Genre-based filtering
+- Responsive design for various screen sizes
+- Custom UI components with smooth animations
+- Real-time data fetching from TMDb API
 
-In the project directory, you can run:
+## Tech Stack
+- React 18
+- TypeScript 4
+- CSS3 (custom styling)
 
-### `npm start`
+## Prerequisites
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
+1. Clone the repository: https://github.com/Akshat53/movie-info-app.git
+2. Navigate to the project directory: cd movie-list-app
+3. Install dependencies: npm install or npm i
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Usage
+To start the development server: npm start 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-### `npm run build`
+**Important Note:** If API requests fail, you may need to use a VPN. Some regions might have restrictions accessing The Movie Database API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
+- `src/components/`: React components
+- `src/api/`: API-related functions
+- `src/hooks/`: Custom React hooks
+- `src/types/`: TypeScript type definitions
+- `src/App.tsx`: Main application component
+- `src/App.css`: Main stylesheet
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Key Components
+- `App`: Main component
+- `Header`: Displays app title
+- `GenreFilter`: Genre selection UI
+- `MovieList`: Renders movie list for each year
+- `MovieCard`: Displays individual movie info
+- `Spinner`: Loading indicator
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Integration
+Uses The Movie Database (TMDb) API:
+- Movie Discovery: `https://api.themoviedb.org/3/discover/movie`
+- Genre List: `https://api.themoviedb.org/3/genre/movie/list`
 
-### `npm run eject`
+## Features in Detail
+1. **Initial Load**: Shows top 20 movies from 2012
+2. **Infinite Scroll**: 
+   - Scroll up: Load previous year's movies
+   - Scroll down: Load next year's movies
+3. **Genre Filtering**: 
+   - Dynamic genre fetching
+   - Multiple genre selection
+   - Real-time movie list update
+4. **Responsive Design**: Adapts to various screen sizes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Styling
+- Custom CSS without external UI libraries
+- Responsive design with media queries
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Troubleshooting
+If you encounter issues:
+1. Verify all dependencies are installed
+2. Check your internet connection
+3. Try using a VPN if API requests fail
+4. Clear browser cache and restart the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contributing
+Contributions are welcome. Please feel free to submit a Pull Request.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
+This project is licensed under the MIT License.
 
-## Learn More
+## Acknowledgments
+- The Movie Database (TMDb) for their comprehensive API
+- React community for excellent documentation and support
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+For questions or feedback, please contact Akshat Kumar Singh at singh.akshat.akshat26@gmail.com 
